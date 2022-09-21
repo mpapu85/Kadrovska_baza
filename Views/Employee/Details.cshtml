@@ -1,0 +1,160 @@
+﻿@model Kadrovska_baza.Models.Employee
+
+@{
+    ViewData["Title"] = "Detalji";
+}
+
+<div class="row">
+    <div class="col-8" >
+        <h3 class="text-end">Podaci o zaposlenom: <b>@Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.LastName)</b></h3>
+    </div>
+    <div class="col-4 text-end" >
+        <img class="border-info rounded-circle" style="max-width:100px"  src="@Html.DisplayFor(model=>model.PictureURL)"/>
+    </div>
+</div>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FatherName)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.FatherName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SocialSecurityNumber)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.SocialSecurityNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.State.NameOfState)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PlaceOfBirth)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.PlaceOfBirth.NameOfCity)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CommunityOfBirth)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.CommunityOfBirth.NameOfComminuty)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PlaceOfResidence)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.PlaceOfResidence.NameOfCity)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CommunityOfResidence)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.CommunityOfResidence.NameOfComminuty)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LevelOfEducation)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.LevelOfEducation.NameOfLevelOfEducation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProfessionalQualification)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.ProfessionalQualification.NameOfProfessionalQualification)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Profession)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.Profession.NameOfProfession)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartOfWork)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.StartOfWork)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Employment)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.Employment.NameOfEmployment)
+        </dd>
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Organization)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.Organization.NameOfOrganization)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sector)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.Sector.NameOfSector)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Office)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.Office.NameOfOffice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.Position.NameOfPosition)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DateOfTransfer)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.DateOfTransfer)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ReasonForTermination)
+        </dt>
+        <dd class = "col-sm-4">
+            @Html.DisplayFor(model => model.ReasonForTermination.NameOfReasonForTermination)
+        </dd>
+       
+    </dl>
+</div>
+<div class="text-center">
+    <a asp-action="Index" class="btn btn-outline-secondary m-5" style="width:150px">Vrati se na listu</a>
+    <a asp-action="Delete" asp-route-id="@Model?.Id" class="btn btn-outline-danger m-5" style="width:150px">Obriši</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-outline-primary m-5" style="width:150px">Izmeni</a>
+
+</div>

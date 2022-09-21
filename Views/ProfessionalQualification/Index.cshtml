@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Kadrovska_baza.Models.ProfessionalQualification>
+
+@{
+    ViewData["Title"] = "Lista struke";
+}
+
+<h2 style="text-align:center">Lista svih stručnih oblasti</h2>
+
+<div class="col-md-8 offset-2">
+    <table class="table">
+    <thead>
+        <tr>
+            <th style="width:80%">
+                @Html.DisplayNameFor(model => model.NameOfProfessionalQualification)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfProfessionalQualification)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+    </table>
+
+</div>
+
+
+<div style="position: fixed; right: 25px; bottom: 70px;" class="text-white">
+    <a asp-action="Create" class="btn btn-success"><i class="bi bi-plus-circle"></i>  Dodaj</a>
+</div>

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Kadrovska_baza.Models.Employee>
+
+@{
+    ViewData["Title"] = "Lista zaposlnih";
+}
+
+<br />
+<form asp-action="Index" method="get" >
+    <div class="row offset-2" style="" >
+        <input class="col-md-8 m-md-2"  type="text" placeholder="Pretraži" name="SearchString" value="@ViewData["CurrentFilter"]">
+        <input class="btn btn-secondary my-2 my-sm-0 col-1 m-md-2"  type="submit" value="Pretraži"/>
+    </div>
+</form>
+
+<div class="col-md-12 ">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    slika
+                </th>
+                <th>
+                    @Html.ActionLink("Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+                </th>
+                <th>
+                    @Html.ActionLink("LastName", "Index", new { sortOrder = ViewBag.LastNameSortParm })
+                </th>
+                <th>
+                    @Html.ActionLink("Organizacija", "Index", new { sortOrder = ViewBag.OrganizationSortParm })
+                </th>
+                <th>
+                    @Html.ActionLink("Pozicija", "Index", new { sortOrder = ViewBag.PositionSortParm })
+                </th>
+                <th>
+                    @Html.ActionLink("Datum početka rada", "Index", new { sortOrder = ViewBag.DateSortParm })
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody style="vertical-align:middle">
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    <img class="border-info rounded-circle" style="max-width:30px"  src="@item.PictureURL"/>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Organization.NameOfOrganization)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PositionId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartOfWork)
+                </td>
+                <td style="float:right">
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary">Detalji</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>
+</div>
+<div style="position: fixed; right: 25px; bottom: 70px;" class="text-white">
+    <a asp-action="Create" class="btn btn-success"><i class="bi bi-plus-circle"></i> Dodaj</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}

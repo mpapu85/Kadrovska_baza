@@ -1,0 +1,31 @@
+﻿@model Kadrovska_baza.Models.LevelOfEducation
+
+@{
+    ViewData["Title"] = "Novi stepen stručne spreme";
+}
+
+<h2 class="col-md-6 offset-3" style="text-align:center">Unesite podatke o novom stepenu stručne spreme</h2>
+
+<hr />
+<div class="row ">
+    <div class="col-md-6 offset-3">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NameOfLevelOfEducation" class="control-label"></label>
+                <input asp-for="NameOfLevelOfEducation" class="form-control" />
+                <span asp-validation-for="NameOfLevelOfEducation" class="text-danger"></span>
+            </div>
+            <div class="form-group m-4">
+                <input type="submit" value="Create" class="btn btn-primary" style="float:right; width:150px"/>
+                <a asp-action="Index" class="btn btn-secondary" style="width:150px">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

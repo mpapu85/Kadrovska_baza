@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Početna";
+}
+
+<div class="text-center">
+    <br />
+    <br />
+    <div class="section">
+        <h1 >KADROVSKA EVIDENCIJA</h1>
+    </div>
+    <br />
+    <br />
+    <div class="row ">
+        <div class="col-6 ">
+            <div class="card slideLeft">
+                <a asp-controller="Employee" asp-action="Index">
+                    <div class="card-header text-white bg-gradient">
+                        <p class="card-text" >
+                            <h5 class="card-title" >
+                                ZAPOSLENI
+                            </h5>
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <img src=~/img/Customer-PNG-Picture.png/>
+                    </div>
+                </a>
+             </div>
+        </div>
+        <div class="col-6 ">
+            <div class="card slideRight">
+                
+                <a asp-controller="Izvestaj" asp-action="Index">
+                    <div class="card-header text-white bg-gradient">
+                        <p class="card-text">
+                            <h5 class="card-title">
+                                IZVEŠTAJI
+                            </h5>
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <img src=~/img/chart1.png />
+                    </div>
+                </a>
+
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+<script src="~/js/site.js"></script>

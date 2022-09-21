@@ -1,0 +1,26 @@
+﻿@model Kadrovska_baza.Models.Employee
+
+@{
+    ViewData["Title"] = "Brisanje";
+}
+
+<h4 class="col-md-6 offset-3 text-danger" style="text-align:center">Da li si siguran da želiš da obrišeš zaposlenog?</h4>
+<div class ="col-md-6 offset-3">
+    <hr />
+    <br />
+    <div class="row">
+        <div>
+            <h4 style="text-align:center">@Html.DisplayNameFor(model => model.Name) i @Html.DisplayNameFor(model => model.LastName)</h4>
+        </div>
+        <div>
+            <h4 style ="text-align:center">@Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.LastName)</h4>
+        </div>
+               
+    </div>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Obriši" class="btn btn-danger" style="float:right; width:150px" /> 
+        <a asp-action="Index" class="btn btn-secondary" style="width:150px">Vrati se na listu</a>
+    </form>
+</div>

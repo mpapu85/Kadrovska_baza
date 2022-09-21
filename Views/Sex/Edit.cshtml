@@ -1,0 +1,33 @@
+﻿@model Kadrovska_baza.Models.Sex
+
+@{
+    ViewData["Title"] = "Izmena";
+}
+
+<h2 class="col-md-6 offset-3" style="text-align:center">Izmena podataka Sexa</h2>
+
+<hr class="col-md-6 offset-3"/>
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+             <a asp-for="Id" hidden class="control-label"></a>
+                
+            <div class="form-group m-2">
+                <label asp-for="NameOfSex" class="control-label"></label>
+                <input asp-for="NameOfSex" class="form-control" />
+                <span asp-validation-for="NameOfSex" class="text-danger"></span>
+            </div>
+            <div class="form-group m-4">
+                <input type="submit" value="Save" class="btn btn-primary" style="float:right; width:150px"/>
+                <a asp-action="Index" class="btn btn-secondary" style="width:150px">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,30 @@
+﻿@model Kadrovska_baza.Models.Sector
+
+@{
+    ViewData["Title"] = "Brisanje";
+}
+
+<br />
+<br />
+
+<h4 class="col-md-6 offset-3 text-danger" style="text-align:center">Da li ste sigurni sa želite da obrišete podatke o ovom Sectoru?</h4>
+<div class="col-md-6 offset-3">
+    <hr />
+    <br />
+    <div class="row">
+        <div >
+            <h4 style="text-align:center">@Html.DisplayNameFor(model => model.NameOfSector):</h4>
+        </div>
+        <div>
+            <h2 style="text-align:center"> <b> @Html.DisplayFor(model => model.NameOfSector)</b></h2>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id"  />
+        <input type="submit" value="Delete" class="btn btn-danger" style="float:right; width:150px"/> 
+        <a asp-action="Index" class="btn btn-secondary" style="width:150px">Back to List</a>
+    </form>
+    </div>
+</div>

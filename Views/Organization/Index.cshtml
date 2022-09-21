@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Kadrovska_baza.Models.Organization>
+
+@{
+    ViewData["Title"] = "Lista organizacja";
+}
+
+<h2 style="text-align:center">Lista organizacja</h2>
+
+<div class="col-md-8 offset-2">
+    <table class="table">
+    <thead>
+        <tr>
+            <th style="width:80%">
+                @Html.DisplayNameFor(model => model.NameOfOrganization)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfOrganization)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+    </table>
+
+</div>
+
+
+<div style="position: fixed; right: 25px; bottom: 70px;" class="text-white">
+    <a asp-action="Create" class="btn btn-success"><i class="bi bi-plus-circle"></i>  Dodaj</a>
+</div>
